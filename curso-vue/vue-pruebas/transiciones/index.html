@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<title>Directivas</title>
+	</head>
+	<body>
+
+		<div id="app">
+			<h2>Listado de tareas</h2>
+			<button @click="btnMostrar">Aparecer / Ocultar</button>
+
+			<transition name="aparecer"> <!-- envolver el elemento que queremos hacer la transicion  en transition-->
+			<ul v-if="mostrar"> <!-- controlador con un metodo el v-if para mostrarlo o no -->
+				<li v-bind:class="{completado: tarea.completado}"
+       					@click="completarTarea(tarea)"
+       					v-for="tarea in tareas"
+					>
+					{{ tarea.titulo }}
+
+
+				</li>
+			</ul>
+			</transition>
+
+			<hr>
+			<pre>
+			{{  tareas }}
+			</pre>
+
+		
+
+		</div>
+
+
+
+		
+
+
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+		<script src="app.js">
+		</script>
+	</body>
+</html>

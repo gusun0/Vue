@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<title>Directivas</title>
+	</head>
+	<body>
+
+		<div id="app">
+			<h2>Listado de personas</h2>
+			<ul>
+				<li v-for="persona in personas">
+					{{ persona.name }}
+				</li>
+			</ul>
+
+
+		</div>
+
+
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+		<script 
+		src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" 
+		integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" 
+		crossorigin="anonymous"></script>
+		<script src="app.js"></script>
+	</body>
+</html>

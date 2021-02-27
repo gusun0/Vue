@@ -1,0 +1,59 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+		<title>Tareas Vue</title>
+		<style>
+			.tareaRealizada{
+				text-decoration: line-through;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<!-- Vuejs component -->
+			<div id="taskApp" class="col-sm-8 col-sm-offset-2">
+				<h1> {{ nameApp }} </h1>
+
+				<form v-on:submit="agregarTarea">
+					<input type="text" v-model="tareas.titulo" class="form-control">
+					<input type="submit" value="Agregar Tarea" class="btn btn-block btn-success">
+				</form>
+
+
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Hecho</th>
+							<th>Tarea</th>
+							<th>Delete</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr v-for="tarea in tareas">
+							<td>
+								<input type="checkbox" v-model="tarea.hecho">
+							</td>
+							<td :class="{tareaRealizada: tarea.hecho }">
+
+								{{ tarea.titulo }}
+							</td>
+							<td>
+								<button 
+									class="btn btn-danger"
+	 								v-on:click="eliminarTarea(tarea)"
+
+									>
+									Eliminar
+								</button>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+		<script src="./index.js"></script>
+	</body>
+</html>

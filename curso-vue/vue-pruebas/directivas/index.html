@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<title>Directivas</title>
+	</head>
+	<body>
+
+		<div id="app">
+			<h1 v-if="conectado">Estas conectado</h1>
+			<h1 v-else>NO estas conectado</h1>
+			<span v-if="edad >= 18">Eres mayor de 18</span>
+			<span v-else>NO eres mayor de 18</span>
+			<hr>
+			<h2>Renderizado de listas</h2>
+			<ul>
+				<li v-for="item in lista">
+					{{ item }}
+				</li>
+			</ul>
+			
+			<hr>
+			<ul>
+				<li v-for="item in listaPersonas">
+					{{ item.nombre }} - {{ item.edad }}
+				</li>
+			</ul>
+		
+
+		</div>
+
+
+		
+
+
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+		<script src="app.js">
+		</script>
+	</body>
+</html>
